@@ -1,0 +1,180 @@
+--------------------------------------------------------------------------------
+ModelTest-NG vx.y.z
+
+Input data:
+  MSA:        Combined_HA.fas
+  Tree:       Maximum likelihood
+    file:           -
+  #taxa:            32
+  #sites:           1701
+  #patterns:        99
+  Max. thread mem:  1 MB
+
+Output:
+  Log:           HA_model.log
+  Starting tree: HA_model.tree
+  Results:       HA_model.out
+
+Selection options:
+  # dna schemes:      11
+  # dna models:       88
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          2/4
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  HKY+G4             5     -3388.1832      7267.3385         0.0000    0.5019
+       2  HKY+I              5     -3388.4961      7267.9643         0.6258    0.3671
+       3  TrN+G4             6     -3387.7826      7273.9763         6.6378    0.0182
+       4  TPM2uf+G4          6     -3388.0754      7274.5619         7.2234    0.0136
+       5  HKY                4     -3395.5268      7274.5867         7.2482    0.0134
+       6  TrN+I              6     -3388.0972      7274.6056         7.2671    0.0133
+       7  HKY+I+G4           6     -3388.1096      7274.6302         7.2917    0.0131
+       8  TPM1uf+G4          6     -3388.1101      7274.6312         7.2927    0.0131
+       9  TPM3uf+G4          6     -3388.1664      7274.7439         7.4054    0.0124
+      10  TPM2uf+I           6     -3388.3877      7275.1866         7.8481    0.0099
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              HKY+G4
+lnL:                -3388.1832
+Frequencies:        0.3515 0.1873 0.2214 0.2398
+Subst. Rates:       1.0000 14.9141 1.0000 1.0000 14.9141 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3150
+Score:              7267.3385
+Weight:             0.5019
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.4099
+Gamma:              0.5605
+Gamma-Inv:          0.0146
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.6391
+Alpha:              0.3161
+Alpha-P.Inv:        1.5323
+P.Inv-Alpha:        0.4647
+Frequencies:        0.3515 0.1873 0.2215 0.2398 
+
+Commands:
+  > phyml  -i Combined_HA.fas -m 010010 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s Combined_HA.fas -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa Combined_HA.fas --model HKY+G4
+  > paup -s Combined_HA.fas
+  > iqtree -s Combined_HA.fas -m HKY+G4
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  HKY+G4             5     -3388.1832      6908.3664         0.0000    0.1373
+       2  HKY+I              5     -3388.4961      6908.9922         0.6258    0.1004
+       3  TrN+G4             6     -3387.7826      6909.5652         1.1988    0.0754
+       4  TPM2uf+G4          6     -3388.0754      6910.1508         1.7844    0.0563
+       5  TrN+I              6     -3388.0972      6910.1945         1.8281    0.0551
+       6  HKY+I+G4           6     -3388.1096      6910.2191         1.8528    0.0544
+       7  TPM1uf+G4          6     -3388.1101      6910.2201         1.8538    0.0544
+       8  TPM3uf+G4          6     -3388.1664      6910.3328         1.9664    0.0514
+       9  TPM2uf+I           6     -3388.3877      6910.7755         2.4091    0.0412
+      10  TPM1uf+I           6     -3388.4237      6910.8474         2.4810    0.0397
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              HKY+G4
+lnL:                -3388.1832
+Frequencies:        0.3515 0.1873 0.2214 0.2398
+Subst. Rates:       1.0000 14.9141 1.0000 1.0000 14.9141 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3150
+Score:              6908.3664
+Weight:             0.1373
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.3456
+Gamma:              0.4705
+Gamma-Inv:          0.1830
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.6391
+Alpha:              0.3225
+Alpha-P.Inv:        1.5871
+P.Inv-Alpha:        0.4602
+Frequencies:        0.3519 0.1869 0.2219 0.2394 
+
+Commands:
+  > phyml  -i Combined_HA.fas -m 010010 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s Combined_HA.fas -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa Combined_HA.fas --model HKY+G4
+  > paup -s Combined_HA.fas
+  > iqtree -s Combined_HA.fas -m HKY+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  HKY+G4             5     -3388.1832      6913.3664         0.0000    0.1377
+       2  HKY+I              5     -3388.4961      6913.9922         0.6258    0.1007
+       3  TrN+G4             6     -3387.7826      6914.5652         1.1988    0.0756
+       4  TPM2uf+G4          6     -3388.0754      6915.1508         1.7844    0.0564
+       5  TrN+I              6     -3388.0972      6915.1945         1.8281    0.0552
+       6  HKY+I+G4           6     -3388.1096      6915.2191         1.8528    0.0545
+       7  TPM1uf+G4          6     -3388.1101      6915.2201         1.8538    0.0545
+       8  TPM3uf+G4          6     -3388.1664      6915.3328         1.9664    0.0515
+       9  TPM2uf+I           6     -3388.3877      6915.7755         2.4091    0.0413
+      10  TPM1uf+I           6     -3388.4237      6915.8474         2.4810    0.0398
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              HKY+G4
+lnL:                -3388.1832
+Frequencies:        0.3515 0.1873 0.2214 0.2398
+Subst. Rates:       1.0000 14.9141 1.0000 1.0000 14.9141 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3150
+Score:              6913.3664
+Weight:             0.1377
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.3459
+Gamma:              0.4708
+Gamma-Inv:          0.1825
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.6391
+Alpha:              0.3225
+Alpha-P.Inv:        1.5843
+P.Inv-Alpha:        0.4598
+Frequencies:        0.3519 0.1869 0.2219 0.2394 
+
+Commands:
+  > phyml  -i Combined_HA.fas -m 010010 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s Combined_HA.fas -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa Combined_HA.fas --model HKY+G4
+  > paup -s Combined_HA.fas
+  > iqtree -s Combined_HA.fas -m HKY+G4
+Done
