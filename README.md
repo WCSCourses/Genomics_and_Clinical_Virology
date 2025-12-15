@@ -60,7 +60,7 @@ After attending the course, participants should be able to:
 | Course Date | Course Title | Location |Citation DOI |
 |-------------|--------------|----------|-------------|
 | 18–23 February 2024  | [Genomics and Clinical Virology 2024](https://github.com/WCSCourses/GCV24) |Wellcome Genome Campus, UK |[![DOI](https://zenodo.org/badge/848269869.svg)](https://zenodo.org/doi/10.5281/zenodo.13380505) |
-| 2–7 March 2025  | [Genomics and Clinical Virology 2025](https://github.com/WCSCourses/Genomics_and_Clinical_Virology_2025) |Wellcome Genome Campus, UK | [![DOI](https://zenodo.org/badge/848269869.svg)](https://doi.org/10.5281/zenodo.13380505) |
+| 2–7 March 2025  | [Genomics and Clinical Virology 2025](https://github.com/WCSCourses/GCV_2025) |Wellcome Genome Campus, UK | [![DOI](https://zenodo.org/badge/848269869.svg)](https://doi.org/10.5281/zenodo.13380505) |
 
 ******
 
